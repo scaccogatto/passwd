@@ -270,7 +270,7 @@ server.tool(
       .optional()
       .describe("Arguments to pass to the command (e.g. ['-h', 'db.prod.com', '-U', 'deploy'])"),
     inject: z
-      .record(z.string())
+      .record(z.string(), z.string())
       .describe("Map of environment variable names to secret references in 'secretId:field' format (e.g. { \"PGPASSWORD\": \"abc123:password\" })"),
     timeout: z
       .number()
@@ -513,9 +513,9 @@ server.tool(
   "Connect to a remote MCP service using credentials stored in passwd. The mcpConfig from get_secret contains the MCP server configuration in standard format (mcpServers or url+headers). Read it to find the endpoint URL and the header-to-field mapping — each auth header maps to a secret field name (e.g. username, password). Credentials are resolved server-side and never exposed to the conversation.",
   {
     secretId: z.string().describe("The passwd secret ID containing the service credentials"),
-    url: z.string().url().describe("The remote MCP server endpoint URL"),
+    url: z.url().describe("The remote MCP server endpoint URL"),
     headers: z
-      .record(z.string())
+      .record(z.string(), z.string())
       .describe(
         "Map of HTTP header names to secret field names (e.g. { 'rhl-email': 'username', 'rhl-pass': 'password' })"
       ),
@@ -600,7 +600,7 @@ server.tool(
     secretId: z.string().describe("The passwd secret ID used to connect to the service"),
     toolName: z.string().describe("The name of the remote tool to call"),
     arguments: z
-      .record(z.unknown())
+      .record(z.string(), z.unknown())
       .optional()
       .describe("Arguments to pass to the remote tool"),
   },
