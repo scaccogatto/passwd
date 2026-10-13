@@ -23,9 +23,9 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
     "@passwd/passwd-lib": "1.6.1",
-    "@modelcontextprotocol/sdk": "^1.12.1",
-    "zod": "^3.24.2"
+    "zod": "^4.6.7"
   },
   "repository": {
     "type": "git",

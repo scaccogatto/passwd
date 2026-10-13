@@ -17,8 +17,8 @@
     "build:integration": "npm run build && npx tsc -p test/integration/tsconfig.json"
   },
   "devDependencies": {
-    "@types/node": "^22.13.5",
-    "typescript": "^5.7.3"
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2"
   },
   "repository": {
     "type": "git",
