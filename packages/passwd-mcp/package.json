@@ -9,7 +9,9 @@
   },
   "files": [
     "dist",
-    "!dist/__tests__"
+    "!dist/__tests__",
+    "src",
+    "!src/__tests__"
   ],
   "scripts": {
     "build": "tsc -b"
@@ -22,6 +24,9 @@
     "model-context-protocol"
   ],
   "license": "MIT",
+  "engines": {
+    "node": ">=22.12"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.1",
     "@passwd/passwd-lib": "1.6.1",
