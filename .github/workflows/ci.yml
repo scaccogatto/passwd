@@ -18,3 +18,5 @@ jobs:
 
       - run: npm ci
       - run: npm test
+      - name: Type-check integration tests
+        run: npx tsc -p test/integration/tsconfig.json
