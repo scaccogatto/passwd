@@ -21,6 +21,9 @@
     "passwd-team"
   ],
   "license": "MIT",
+  "engines": {
+    "node": ">=22.12"
+  },
   "dependencies": {
     "@passwd/passwd-lib": "1.6.1",
     "commander": "^15.0.0"
