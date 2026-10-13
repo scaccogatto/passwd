@@ -1,7 +1,7 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import { PassThrough } from "node:stream";
-import { createStreamMasker, pipeMasked, MASK } from "../util/mask.js";
+import { createStreamMasker, maskSecrets, pipeMasked, MASK } from "../mask.js";
 
 function maskChunks(secrets: string[], chunks: (Buffer | string)[]): string {
   const masker = createStreamMasker(secrets);
@@ -76,6 +76,12 @@ describe("createStreamMasker", () => {
 
   it("ignores empty secrets", () => {
     assert.equal(maskChunks([""], ["hello"]), "hello");
+  });
+});
+
+describe("maskSecrets", () => {
+  it("masks every occurrence in a complete string", () => {
+    assert.equal(maskSecrets("a hunt hunter2 hunter2", ["hunter2"]), `a hunt ${MASK} ${MASK}`);
   });
 });
 

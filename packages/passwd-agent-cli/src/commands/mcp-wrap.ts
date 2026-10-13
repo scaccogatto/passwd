@@ -1,6 +1,5 @@
 import { spawn } from "node:child_process";
-import { getSecret, requireHttps } from "@passwd/passwd-lib";
-import { pipeMasked } from "../util/mask.js";
+import { getSecret, pipeMasked, requireHttps } from "@passwd/passwd-lib";
 
 interface HeaderMapping {
   headerName: string;

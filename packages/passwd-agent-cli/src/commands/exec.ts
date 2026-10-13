@@ -1,7 +1,6 @@
 import { spawn } from "node:child_process";
-import { getSecret } from "@passwd/passwd-lib";
+import { getSecret, pipeMasked } from "@passwd/passwd-lib";
 import { parseInjection } from "../util/parse-injection.js";
-import { pipeMasked } from "../util/mask.js";
 
 export async function execCommand(
   args: string[],

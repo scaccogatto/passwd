@@ -85,6 +85,12 @@ export function createStreamMasker(secretValues: readonly string[]): StreamMaske
   };
 }
 
+/** Mask every secret value in a complete string. */
+export function maskSecrets(text: string, secretValues: readonly string[]): string {
+  const masker = createStreamMasker(secretValues);
+  return masker.write(text) + masker.end();
+}
+
 /** Pipe `source` into `target`, masking every secret value on the way. */
 export function pipeMasked(
   source: Readable | null,
