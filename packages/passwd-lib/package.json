@@ -1,7 +1,7 @@
 {
   "name": "@passwd/passwd-lib",
   "version": "1.6.1",
-  "description": "Core library for passwd.team — auth, API client, and types",
+  "description": "Core library for passwd.team \u2014 auth, API client, and types",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,9 @@
   },
   "files": [
     "dist",
-    "!dist/__tests__"
+    "!dist/__tests__",
+    "src",
+    "!src/__tests__"
   ],
   "scripts": {
     "build": "tsc -b"
@@ -24,6 +26,9 @@
     "passwd-team"
   ],
   "license": "MIT",
+  "engines": {
+    "node": ">=22.12"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/pepuscz/passwd.git",
